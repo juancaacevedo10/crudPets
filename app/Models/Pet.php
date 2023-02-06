@@ -13,6 +13,8 @@ class Pet extends Model
         'pet_type'=>'required',
     ];
 
+    protected $primaryKey = 'id_pet';
+
     protected $fillable = [
         'id_pet',
         'pet_name',

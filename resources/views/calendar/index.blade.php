@@ -16,6 +16,44 @@
     </div>
   </div>
 </div >
+<div class='container'>
+  @if(!empty($pets))
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">identificacion mascota</th>
+      <th scope="col">Nombre mascota</th>
+      <th scope="col">Tipo mascota</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($pets as $pet)
+    <tr>
+      <th scope="row">{{$pet->id_pet}}</th>
+      <td>{{$pet->pet_name}}</td>
+      <td>{{$pet->pet_type}}</td>
+      <td>
+      <button type='submit' class="btn btn-danger">
+              Delete
+            </button>
+          <form action="{{ route('pets.destroy',[$pet->id_pet]) }}" method="POST">
+            @csrf
+            {{method_field('DELETE')}}
+            <button type='submit' class="btn btn-danger">
+              Delete
+            </button>
+          </form>
+
+      </td>
+
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+@endif
+</div >
 
 
 <div class="container">

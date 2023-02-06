@@ -27,6 +27,6 @@ Route::get('/calendar', [App\Http\Controllers\AppointmentController::class, 'ind
 Route::get('/calendar/agregar', [App\Http\Controllers\AppointmentController::class, 'store']);
 
 
-Route::get('/pets', [App\Http\Controllers\PetController::class, 'index']);
+Route::get('/calendar', [App\Http\Controllers\PetController::class, 'index']);
 Route::post('/pets', [App\Http\Controllers\PetController::class, 'store'])->name('pets.store');
-Route::delete('/pets', [App\Http\Controllers\PetController::class, 'destroy']);
+Route::delete('/pets/{id}', [App\Http\Controllers\PetController::class, 'destroy'])->name('pets.destroy');

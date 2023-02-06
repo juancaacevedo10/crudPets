@@ -12,10 +12,12 @@ class PetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return view(view:'calendar.index');
+        $pets=$request->user()->pets()->get();
+        
+        return view('calendar.index',compact('pets'));
     }
 
     /**
@@ -92,8 +94,14 @@ class PetController extends Controller
      * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pet $pet)
+    public function destroy($pet)
     {
         //
+        $pets = Pet::find($pet);
+        if(empty($pets)){
+            return redirect(to:'/calendar');
+        }
+        $pets->delete();
+        return redirect(to:'/calendar');
     }
 }
