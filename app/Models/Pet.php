@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
+    protected $rules = [
+        'id_pet'=>'required',
+        'pet_name'=>'required',
+        'pet_type'=>'required',
+    ];
 
     protected $fillable = [
         'id_pet',
