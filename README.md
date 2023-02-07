@@ -27,6 +27,11 @@ php artisan migrate
 
 npm run dev
 
+
+--al iniciar en index de public se presentara el login, se debe realizar el registro  y el inicio de sesion para pode ser dirigido al calendario de citas y al registro de mascotas 
+
+http://localhost/crud_pets/public/calendar
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
