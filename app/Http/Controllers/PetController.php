@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,21 @@ class PetController extends Controller
     public function index(Request $request)
     {
         //
+        $appointment = Appointment::all();
+        $events =[];
+        foreach ($appointment as $event){
+            $events[]=[
+                'title'=>$event->id,
+                'start'=>$event->appointment_date,
+                'end'=>$event->appointment_time,
+            ];
+        }
+
+
         $pets=$request->user()->pets()->get();
+
         
-        return view('calendar.index',compact('pets'));
+        return view('calendar.index',compact('pets','events'));
     }
 
     /**

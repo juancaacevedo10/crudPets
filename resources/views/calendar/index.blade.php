@@ -9,11 +9,6 @@
         Agregar mascotas 
       </button>    
     </div>
-    <div class="col">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar">
-        agregar cita 
-      </button>    
-    </div>
   </div>
 </div >
 <div class='container'>
@@ -179,7 +174,8 @@
 
 <div class="container">
 
-    <div id="agenda">calendario</div>
+    <div id="calendar"></div>
+
 </div>
 
 <!-- Modal pets -->
@@ -236,9 +232,23 @@
   </div>
 </div>
 </form>
-
-
-
-
-
 @endsection
+@push('scripts')
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'timeGridWeek',
+          events: @json($events),
+          locale:"es",
+          headerToolbar:{
+            left:'prev,next today',
+            center:'title',
+            right:'dayGridMonth, timeGridWeek, listWeek'
+          },
+        });
+        calendar.render();
+      });
+</script>
+@endpush
