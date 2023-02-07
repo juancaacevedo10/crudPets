@@ -41,7 +41,7 @@ class AppointmentController extends Controller
         $appointment = new Appointment();
         $appointment->appointment_pet =$request->input('idPets');
         $appointment->appointment_date =$request->input('date');
-        $appointment->appointment_time ='2023-02-07 02:21:50';
+        $appointment->appointment_time =$request->input('time');
         $appointment->save();
         return redirect(to:'/calendar');
     }

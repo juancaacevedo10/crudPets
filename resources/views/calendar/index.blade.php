@@ -138,11 +138,19 @@
                                   </div>
                                 <div class="col">
                                 <div class="form-group">
-                                      <label for="date">Fecha</label>
+                                      <label for="date">Fecha inicio</label>
                                       <input type="datetime-local" min="2023-02-01" class="form-control" id="date" name="date" >
-                                      <small id="helpId" class="form-text text-muted">Fecha cita</small>
+                                      <small id="helpId" class="form-text text-muted">Fecha inicio cita</small>
                                     </div>
                               </div>
+                              <div class="col">
+                                <div class="form-group">
+                                      <label for="time">Fecha fin</label>
+                                      <input type="datetime-local" min="2023-02-01" class="form-control" id="time" name="time" >
+                                      <small id="helpId" class="form-text text-muted">Fecha fin cita</small>
+                                    </div>
+                              </div>
+                              
                               </div>  
                                   </div>
                                   <div class="modal-footer">

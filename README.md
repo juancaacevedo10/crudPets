@@ -1,3 +1,32 @@
+
+## instalacion proyecto local
+
+--Instalar dependencias:
+
+composer install
+
+npm install
+
+--Crear una base de datos que soporte Laravel:
+
+Crear el archivo .env
+
+---Este archivo es necesario para, entre otras cosas, configurar la conexión de la bbdd, el entorno del proyecto, motores para envio y recepción de correos etc …
+Como por cuestiones de seguridad tampoco se subió, necesitamos crearlo.
+Podemos duplicar el archivo .env.example, renombrarlo a .env 
+
+---Generar una clave
+
+php artisan key:generate
+
+--Ejecutar migraciones
+
+php artisan migrate 
+
+--ejecutar entorno
+
+npm run dev
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
