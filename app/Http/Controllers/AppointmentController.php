@@ -12,11 +12,12 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        
         return view('calendar.index');
-    }
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -36,8 +37,13 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Appointment::$rules);
-        $appointment= Appointment::create($request->all());
+        
+        $appointment = new Appointment();
+        $appointment->appointment_pet =$request->input('idPets');
+        $appointment->appointment_date =$request->input('date');
+        $appointment->appointment_time ='2023-02-07 02:21:50';
+        $appointment->save();
+        return redirect(to:'/calendar');
     }
 
     /**

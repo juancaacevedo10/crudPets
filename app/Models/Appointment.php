@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
+    protected $table = 'appointment';
+
     protected $rules = [
+        'appointment_pet'=>'required',
         'appointment_date'=>'required',
         'appointment_time'=>'required',
     ];
@@ -15,6 +18,8 @@ class Appointment extends Model
     protected $fillable = [
         'appointment_date',
         'appointment_time',
+        'appointment_pet',
+
     ];
 
     
@@ -22,5 +27,7 @@ class Appointment extends Model
     {
         return $this->belongsTo(related:Pet::class);
     }
+
+    
     use HasFactory;
 }

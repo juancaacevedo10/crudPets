@@ -71,9 +71,21 @@ class PetController extends Controller
      * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pet $pet)
+    public function edit(Request $request, $pet)
     {
-        //
+        //    
+        $pets = Pet::find($pet);
+
+
+        if(empty($pets)){
+            return redirect(to:'/calendar');
+        }
+
+        $pets->pet_name=$request->name_pet;
+        $pets->pet_type=$request->typePet;
+        $pets->save();  
+        return redirect(to:'/calendar');
+
     }
 
     /**
@@ -83,9 +95,11 @@ class PetController extends Controller
      * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pet $pet)
+    public function update(Request $request, $pet)
     {
-        //
+        
+
+       
     }
 
     /**

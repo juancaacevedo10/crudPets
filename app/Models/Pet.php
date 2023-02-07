@@ -36,5 +36,6 @@ class Pet extends Model
         return $this->hasMany(related:Appointment::class);
     }
 
+
     use HasFactory;
 }
